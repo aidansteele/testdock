@@ -6,7 +6,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 # Install Windows features to enable ASP.NET building
 RUN Install-WindowsFeature NET-Framework-45-ASPNET ; `
 Install-WindowsFeature Web-Asp-Net45
-DOCKxdd
+
 # Install Microsoft Build Tools 2019
 RUN Invoke-WebRequest -UseBasicParsing https://download.visualstudio.microsoft.com/download/pr/4da568ff-b8aa-43ab-92ec-a8129370b49a/6fb89b999fed6f395622e004bfe442eb/vs_buildtools.exe -OutFile vs_BuildTools.exe; `
     # Installer won't detect DOTNET_SKIP_FIRST_TIME_EXPERIENCE if ENV is used, must use setx /M
